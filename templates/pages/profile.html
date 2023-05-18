@@ -1,0 +1,55 @@
+{% extends 'pages/index.html' %}
+{% load static %}
+
+{% block content %}
+<br><br>
+    {% for rooms in room %}
+    <div class="profile-user">
+        <div class="cont-todo">
+            <div class="img-profile">
+                <img src="{{rooms.host.profile.image.url}}" alt="imagen de perfil" width="120" height="120" class="img-user-profile"> 
+            </div>
+            <div class="user-text">
+                <h3 class="nombre">@{{user.username}}</h3>
+                <p class="nombre">{{rooms.host.profile.bio}}</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="mis-salas">
+    
+        <div class="card-room" style="width: 40%;">
+            <!-- {% if request.user == rooms.host %}
+            <a href="{% url 'update-room' rooms.id %}">Edit</a>
+            <a href="{% url 'delete-room' rooms.id %}">Delete</a>
+            {% endif %} -->
+            <!-- <h4>{{rooms.host.username}}</h4>
+            <p>{{rooms.id}}</p> --
+            <p>{{rooms.description}}</p> --
+            <a href="{% url 'rooms' rooms.id %}">{{rooms.name}}</a>
+            <hr> -->
+            <div class="card-head">
+                <div class="user-room">
+                    <img src="{{request.user.profile.image.url}}" alt="login image"  width="40" height="40" class="img-user">
+                    <h5 class="username-tag">@{{rooms.host.username}}</h5>
+                </div>
+               
+            </div>  
+            <div class="card-body">
+                <a href="{% url 'rooms' rooms.id %}" class="link-room">
+                    <h2 class="room-name">{{rooms.name}}</h2>
+                </a>
+                <p class="room-desc">{{rooms.description|truncatewords:15}}</p>
+            </div>
+            <div class="card-footer">
+                <div class="line-foot"></div>
+                <div class="foot-card">
+                    <p class="online">{{rooms.participants.all.count}} participantes</p>
+                    <span class="topic" style="color:white;">{{rooms.topic}}</span>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>    
+
+{% endblock content %}

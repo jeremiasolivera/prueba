@@ -1,0 +1,42 @@
+{% extends '../base.html'%}
+{% load static %}
+
+
+{%block navbar%}
+{% include 'partials/navbar.html' %}
+{%endblock navbar%}
+
+
+{% block content %}
+<div class="app" style="color: var(--gray-light-color); padding-bottom: 200px;">
+    <br><br><br>
+
+    
+
+    <div class="cont-main" style="justify-content: center;">
+        <div class="rooms-component">
+            <div class="header-main">
+                <div class="text-main">
+                    <h2>{{room.name}}</h2>
+                    <h4>{{room.description|truncatewords:8}}</h4>
+                </div>
+                <h3 class="crear-sala">Recuerda ser educado!, comparte tus ideas.</h3>
+            </div>
+            {% if messages.count == 0%}
+                <h2>se el primero en comentar</h2>
+            {% else %}
+                {% include 'partials/messages_component.html' %}
+            {% endif %}
+        </div>
+    </div>
+    
+    {% if request.user.is_authenticated %}
+    {% include 'partials/comentar.html' %}
+    {% endif %}
+</div>
+ 
+{% endblock content %}
+
+
+{%block footer%}
+{%endblock footer%}

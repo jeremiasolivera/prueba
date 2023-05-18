@@ -1,0 +1,6 @@
+<ul class="filter">
+    <a href="{% url 'home' %}"><li>Todo</li></a> 
+    {% for topic in topics%}
+    <a href="{% url 'home' %}?q={{topic.name}}"><li>{{topic.name}}</li></a> 
+    {% endfor %}
+</ul>

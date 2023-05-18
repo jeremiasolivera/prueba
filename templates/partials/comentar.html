@@ -1,0 +1,7 @@
+<div class="comentar-cont">
+    <form method="POST" class="comentar-form">
+        {% csrf_token %}
+        <textarea name="body" id="" cols="70" rows="5" placeholder="Comenta algo..."></textarea>
+        <button class="agregar-comentario">+</button>
+    </form>
+</div>

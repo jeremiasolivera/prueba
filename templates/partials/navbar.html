@@ -1,0 +1,54 @@
+{% load static %}
+
+
+
+<div class="cont-nav">
+    <nav>
+        <a href="{% url 'home' %}" class="cont-logo">
+            <img src="{% static 'sources/mascota.png' %}" alt="logo social" class="logo">
+            <h1>Holigram</h1>
+        </a>
+        <form method="GET" id="form-search" action="{% url 'home' %}">
+            <input type="text" class="search" name="q" placeholder="Curso Django..." autocomplete="off">
+            <button class="btn-search"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </form>
+        <div class="profile-nav">
+            {% if request.user.is_authenticated %}
+                <div class="cont-user-profile">
+                        <img src="{{request.user.profile.image.url}}" alt="login image"  width="42" height="42" class="img-user">
+                        <a href="{% url 'userProfile' user.id %}">                    
+                            <h4 class="user-name">@{{request.user|title}}</h4>
+                        </a>
+                        <div class="drop">
+                            <button id="dropdown" class="dropdown"><i class="fa-solid fa-chevron-down"></i></button>
+                        <!-- DropDown -->
+                            <div class="dropdown-cont">
+                                <ul>
+                                    <li><a href="{% url 'userProfile' user.id %}">Editar perfil</a></li>
+                                    <li><a href="{% url 'account_logout' %}">Salir</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                </div>
+            {% else %}
+                <div class="register-login-cont">
+                    <a href="{% url 'account_login' %}"><h3 class="login">Login</h3></a>
+                    <a href="{% url 'account_signup' %}"><h3 class="register">Register</h3></a>
+                </div>
+            {% endif %} 
+        </div>
+        
+    </nav>
+</div>
+
+
+
+<script>
+    const dropdown = document.getElementById('dropdown');
+    const dropdownCont = document.querySelector('.dropdown-cont');
+
+    dropdown.addEventListener('click',function(){
+       dropdownCont.classList.toggle('open-dropdown')
+
+    })
+</script>

@@ -1,0 +1,26 @@
+{% extends 'pages/index.html' %}
+
+{% load static %}
+
+{% block content %}
+<br><br><br>
+    <div class="form-default">
+        <form method="POST" action="">
+            <h3><i class="fa-solid fa-triangle-exclamation"></i> Crear/Editar una sala para compartir tus ideas sobre un tema!</h3>
+            {% csrf_token %}
+            <p>Tema:</p>
+            {{form.topic}}
+            <p>Nombre:</p>
+            {{form.name}}
+            <p>Descripción:</p>
+            {{form.description}}
+            <label for="{{ form.description.id_for_label }}"></label>
+            <div class="cont-submit">
+            <input type="submit" value="Agregar" class="submit">
+
+            </div>
+        </form>
+    </div>
+    <img src="{% static 'sources/mascota.png' %}" class="mascota">
+
+{% endblock content %}
