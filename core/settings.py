@@ -45,6 +45,14 @@ INSTALLED_APPS = [
     'django.contrib.humanize',
 ]
 
+
+SITE_ID = 1
+#--------------
+CORS_ORIGIN_WHITELIST = [
+    "http://localhost:3000", # Agregue aquí los dominios permitidos
+    "http://127.0.0.1:3000",
+]
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
@@ -136,6 +144,22 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
+
+# Default primary key field type
+# https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
+
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+#DJango-Allauth
+ACCOUNT_AUTHENTICATED_LOGIN_REDIRECTS = True
+LOGIN_REDIRECT_URL = 'home'
+ACCOUNT_LOGOUT_ON_GET = True
+
+ACCOUNT_AUTHENTICATED_LOGIN_REDIRECTS = 'username_email'
+ACCOUNT_EMAIL_REQUIRED = True 
+ACCOUNT_LOGOUT_REDIRECT_URL = 'home'
+
+ACCOUNT_UNIQUE_EMAIL = True
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 

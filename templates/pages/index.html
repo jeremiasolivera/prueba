@@ -1,4 +1,11 @@
 {% extends '../base.html'%}
+{% load static %}
+
+
+{%block navbar%}
+{% include 'partials/navbar.html' %}
+{%endblock navbar%}
+
 
 {% block content %}
 <div class="app" style="color: var(--gray-light-color)">
@@ -9,23 +16,67 @@
     <div class="cont-main">
         <div class="filter-component">
             <h3>TOP SALAS</h3>
+            {% include 'partials/filter_components.html' %}
         </div>
 
         <div class="rooms-component">
             <div class="header-main">
                 <div class="text-main">
                     <h2>Holigram Salas</h2>
-                    <h4>Total de salas disponibles para postear</h4>
+                    <h4>Total de {{roomDisp}} salas disponibles para postear</h4>
                 </div>
-                <h3 class="crear-sala"><a href="">+ Crear Sala</a></h3>
+                <h3 class="crear-sala"><a href="{% url 'create-room' %}">+ Crear Sala</a></h3>
             </div>
+            {% if roomDisp == 0 %}
                 <div class="sin-resultados">
-                    <h4>Primera página desplegada</h4>
+                    <h4>No se encontraron resultados</h4>
                 </div>
+            {% else %}
+                {% include 'partials/rooms_component.html' %}
+            {% endif %}
         </div>
     </div>
      
 </div>
 
+{% if messages %}
+{% for m in messages %}
+<div class="popup-back">
+    <div class="popup-cont">
+        <img src="{% static 'sources/correct.png' %}" class="correct-post" alt="check img">
+        <h2 class="popup-title">Todo salió bien!</h2>
+        <p class="message">{{m}}</p>
+    </div>
+    <button class="close-popup" id="close"><i class="fa-solid fa-xmark"></i></button>
+    <img src="{% static 'sources/mascota.png' %}" class="mascota-popup">
+</div>
+
+<script>
+    const closePopUp = document.getElementById("close");
+    const contPopUp = document.querySelector(".popup-back");
+   
+
+    closePopUp.addEventListener('click',function(){
+        contPopUp.style.opacity = '0'
+        contPopUp.style.pointerEvents = 'none'
+    })
+    
+</script>
+{% endfor %}
+{% endif %}
 {% endblock content %}
 
+{%block footer%}
+{%endblock footer%}
+
+
+
+
+
+
+{% block js %}
+<!-- Sweet Alert -->
+
+
+
+{% endblock js %}
