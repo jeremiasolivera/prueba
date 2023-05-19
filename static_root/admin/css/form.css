@@ -1,0 +1,92 @@
+.form-default{
+    background-color: var(--purple);
+    color: var(--white);
+    margin: 50px auto;
+    width: 650px;
+    border-radius: 10px;
+    box-shadow: 8px 5px 10px rgb(0, 0, 0, .4);
+    padding: 25px;
+    position: relative;
+    z-index: 5;
+}
+
+.mascota{
+    position: absolute;
+    top: 75px;
+    right: 245px;
+    width: 20%;
+    transform: rotate(50deg);
+    z-index: 2;
+}
+
+.form-default h3{
+    font-size: 16px;
+    color: var(--purple-light);
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.form-control{
+    border: none;
+    border-radius: 3px;
+    outline: none;
+    color: var(--white);
+    background-color: var(--purple-medium);
+    margin: 10px 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.541);
+    padding: 6px 8px;
+}
+
+.area-control{
+    width: 90%;
+    border: none;
+    border-radius: 3px;
+    outline: none;
+    color: var(--white);
+    background-color: var(--purple-medium);
+    margin: 10px 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.541);
+    padding: 6px 8px;
+}
+
+textarea{
+    resize: none;
+}
+
+label{
+    margin-right: 5px;
+}
+
+
+input{
+    width: 90%;
+    height: 40px;
+}
+
+.submit{
+    width: 110px;
+    height: 40px;
+    border: none;
+    border-radius: 3px;
+    outline: none;
+    color: var(--white);
+    background-color: var(--purple-medium);
+    margin: 10px 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.541);
+    cursor: pointer;
+    transition: all 400ms;
+}
+
+
+.cont-submit{
+    margin-top: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.submit:hover{
+    
+    background-color: var(--purple-light);
+    
+}

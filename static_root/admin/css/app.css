@@ -1,0 +1,178 @@
+.app{
+    font-size: 16px;
+    color: var(--font-color);
+    width: 100%;
+    height: 100%;
+}
+
+.cont-main{
+    width: 90%;
+    display: flex;
+    margin: 40px auto;
+}
+
+
+.filter-component{
+    width: 300px;
+    height: 100%;
+}
+
+.filter-component h3{
+    font-weight: 700;
+    color: #1c0136b6;
+}
+
+.filter li, .filter a{
+    font-weight: 500;
+    color: #cdb0e9;
+    text-decoration: none;
+    list-style: none;
+    font-size: 18px;
+    margin-top: 25px;
+    transition: all 300ms;
+}
+
+
+.filter a:hover li{
+    color: var(--purple);
+    font-size: 19px;
+}
+
+.rooms-component{
+    width: 65%;
+}
+
+
+.header-main{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.text-main h2{ 
+    font-size: 20px;
+    color: #dbb0ff;
+
+
+}
+.text-main h4{ 
+    font-size: 12px;
+    color: #1c0e2bbd;
+
+} 
+
+
+.crear-sala{
+    background-color: var(--purple);
+    padding: 8px 22px;
+    border-radius: 5px;
+    font-size: 17px;
+    transition: all 300ms ease;
+}
+
+.crear-sala:hover{
+    background-color: #390050;
+}
+
+
+.crear-sala a{
+    text-decoration: none;
+    color: var(--white);
+    font-weight: 500;
+}
+
+
+
+/* Card Salas */
+
+.card-room{
+    background-color: var(--purple);
+    padding: 20px 35px;
+    border-radius: 8px;
+    margin-top: 60px;
+}
+
+.card-head{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.user-room{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.username-tag{
+    font-size: 15px;
+    color: var(--gray-color);
+}
+
+
+.btn-config{
+    margin: 0;
+    margin-right: 5px;
+    background-color: transparent;
+    color: var(--gray-light-color);
+    width: 20px;
+    height: 20px;
+    font-size: 17px;
+    border-radius: 50%;
+    outline: none;
+    border: none;
+    transition: all 400ms ease;
+    cursor: pointer;
+}
+
+.room-name{
+    font-size: 20px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    transition: all 300ms ease-in-out;
+}
+
+.room-desc{
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--purple-light);
+}
+
+.line-foot{
+    width: 100%;
+    height: 1px;
+    background-color: var(--purple-light);
+    margin: 10px auto;
+}
+
+.online{
+    color: var(--purple-light);
+    font-size: 16px;
+}
+
+.link-room{
+    text-decoration: none;
+    color: var(--white);
+}
+
+
+.link-room:hover .room-name{
+    color: var(--purple-light);
+}
+
+/* foot */
+
+.foot-card{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.topic{
+    background-color: #948e9944;
+    padding: 5px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+}
+

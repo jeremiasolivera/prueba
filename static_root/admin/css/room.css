@@ -1,0 +1,101 @@
+.message-cont{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 90%;
+    min-height: 300px;
+    margin: 30px auto;
+    position: relative;
+    z-index: 1;
+}
+
+.mensajes{
+    width: 70%;
+    padding: 10px;
+}
+
+.messages-head{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.199);
+    padding: 10px;
+    width: 95%;
+    margin: 0 auto;
+}
+
+
+.messages-foot{
+    margin: 20px 15px;
+    width: 100%;
+    
+}
+
+.card-message{
+    width: 90%;
+    padding: 10px;
+    min-height: 100px;
+    margin: 20px auto;
+    background-color: var(--purple);
+    color: var(--white);
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0,0,.7);
+}
+
+
+.participantes{
+    gap: 10px;
+    color: rgba(255, 255, 255, 0.596);
+    padding: 20px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 30%;
+}
+
+.comentar-cont{
+    width: 100%;
+    height: 200px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: #2a003dad;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.637);
+    padding: 20px ;
+}
+
+
+.comentar-form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    margin: 0 auto;
+    gap: 10px;
+}
+
+.comentar-form textarea{
+    background-color: var(--dark-purple);
+    outline: none;
+    padding: 10px;
+    color: white;
+    font-size: 18px;
+}
+
+.agregar-comentario{
+    width: 55px;
+    height: 55px;
+    font-size: 20px;
+    border: none;
+    outline: none;
+    background-color: var(--purple);
+    color: white;
+    box-shadow: 1px 1px 10px rgba(255, 255, 255, 0.151);
+    border-radius: 50%;
+    cursor: pointer;
+
+}
