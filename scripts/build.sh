@@ -1,3 +1,5 @@
+chmod +x build.sh
+
 set -o errexit
 
 poetry install
