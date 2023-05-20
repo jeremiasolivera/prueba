@@ -25,6 +25,9 @@ class Room(models.Model):
 
     class Meta:
         ordering = ['-updated', '-created']
+        verbose_name = 'room'
+        verbose_name_plural = 'rooms'
+        
 
 
 
