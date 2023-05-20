@@ -5,7 +5,7 @@
 <div class="card-room">
     <div class="card-head">
         <div class="user-room">
-            <img src="{% static 'sources/default_profile.png' %}" alt="login image"  width="40" height="40">
+            <img src="{{request.user.profile.image.url}}" alt="login image"  width="40" height="40">
             <h5 class="username-tag">@{{message.user|title}}</h5>
         </div>
         {% if request.user == message.user %}
