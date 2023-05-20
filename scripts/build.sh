@@ -1,4 +1,4 @@
-
+chmod 755 build.sh
 
 set -o errexit
 
